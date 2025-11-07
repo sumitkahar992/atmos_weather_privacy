@@ -117,6 +117,7 @@
             <li>Personal information (name, email, phone number, etc.)</li>
             <li>User account information (no registration or login required)</li>
             <li>Location history or location tracking</li>
+            <li>Search history (search queries are sent to Mapbox but not stored by us)</li>
             <li>Device identifiers or advertising IDs</li>
             <li>Usage statistics or analytics data</li>
             <li>Crash reports or diagnostic data</li>
@@ -128,22 +129,37 @@
             <span class="app-name">Atmos Weather</span> provides weather information in the following ways:
         </p>
         <ul>
-            <li><strong>Current Location Weather:</strong> If you grant location permission, the app uses your device's GPS to determine your current city/location and displays weather data for that area. The location coordinates are only used to fetch weather information and are not stored, logged, or transmitted anywhere except to WeatherAPI.com for retrieving weather data.</li>
-            <li><strong>Manual Location Search:</strong> You can search for any city or location by name without enabling location permission. The search is performed directly between your device and the weather data provider.</li>
-            <li><strong>Weather Data:</strong> Weather information is retrieved from WeatherAPI.com. Only the location name or coordinates you search for are sent to their servers to fetch weather data. No personal information is transmitted.</li>
+            <li><strong>Current Location Weather:</strong> If you grant location permission, the app uses your device's GPS to determine your current location coordinates and displays weather data for that area. The location coordinates are only used to fetch weather information and are not stored, logged, or transmitted anywhere except to WeatherAPI.com for retrieving weather data.</li>
+            <li><strong>Manual Location Search:</strong> You can search for any city or location by name without enabling location permission. When you type a location name, your search query is sent to Mapbox Search Box API to provide location suggestions and retrieve coordinates (latitude/longitude). These coordinates are then used to fetch weather data from WeatherAPI.com.</li>
+            <li><strong>Weather Data:</strong> Weather information is retrieved from WeatherAPI.com. Only the location coordinates (latitude/longitude) are sent to their servers to fetch weather data. No personal information is transmitted.</li>
             <li><strong>Local Storage:</strong> All your preferences, saved locations, and backup data are stored locally on your device only. This data never leaves your device.</li>
         </ul>
 
         <h2>4. Third-Party Services</h2>
         <p>
-            Atmos Weather uses <strong>WeatherAPI.com</strong> to provide weather information. When you search for a location, the location name is sent to WeatherAPI.com to retrieve current weather data and forecasts.
+            Atmos Weather uses the following third-party services to provide functionality:
+        </p>
+        
+        <p><strong>4.1 WeatherAPI.com</strong></p>
+        <p>
+            We use WeatherAPI.com to provide weather information. When you search for a location or use your current location, the location name or coordinates are sent to WeatherAPI.com to retrieve current weather data and forecasts.
         </p>
         <p>
-            WeatherAPI.com may collect technical information such as IP addresses for their service operation. We recommend reviewing their privacy policy:
+            WeatherAPI.com may collect technical information such as IP addresses for their service operation. Review their privacy policy:
             <a href="https://www.weatherapi.com/privacy.aspx" target="_blank">WeatherAPI.com Privacy Policy</a>
         </p>
+        
+        <p><strong>4.2 Mapbox Search Box API</strong></p>
         <p>
-            <strong>Important:</strong> We do not have control over and are not responsible for the privacy practices of WeatherAPI.com.
+            We use Mapbox Search Box API to provide location search functionality. When you search for a city or location by name, your search query is sent to Mapbox to retrieve location suggestions and coordinates (latitude/longitude). These coordinates are then used to fetch weather data.
+        </p>
+        <p>
+            Mapbox may collect technical information such as IP addresses and search queries for their service operation. Review their privacy policy:
+            <a href="https://www.mapbox.com/legal/privacy" target="_blank">Mapbox Privacy Policy</a>
+        </p>
+        
+        <p>
+            <strong>Important:</strong> We do not have control over and are not responsible for the privacy practices of these third-party services. These services operate independently and have their own privacy policies and terms of service.
         </p>
 
         <h2>5. Data Storage</h2>
@@ -235,7 +251,7 @@
             <p>
                 <strong>Email:</strong> <a href="mailto:your-email@example.com">sumitkahar073@gmail.com</a><br>
                 <strong>App Name:</strong> Atmos Weather<br>
-                <strong>Developer:</strong> sumit
+                <strong>Developer:</strong> Sumit Kahar
             </p>
             <p style="margin-top: 15px; font-size: 0.9em; color: #5f6368;">
                 We will respond to your inquiries as soon as possible.
