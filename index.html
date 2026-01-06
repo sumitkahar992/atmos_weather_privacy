@@ -33,6 +33,12 @@
             margin-bottom: 15px;
             font-size: 1.4em;
         }
+        h3 {
+            color: #3c4043;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
         p {
             margin-bottom: 15px;
             text-align: justify;
@@ -63,6 +69,13 @@
             border-left: 4px solid #ffc107;
             margin: 20px 0;
         }
+        .info-box {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #4caf50;
+            margin: 20px 0;
+        }
         a {
             color: #1a73e8;
             text-decoration: none;
@@ -73,6 +86,19 @@
         .app-name {
             font-weight: 600;
             color: #1a73e8;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f5f5f5;
         }
         @media (max-width: 600px) {
             .container {
@@ -87,194 +113,216 @@
 <body>
     <div class="container">
         <h1>Privacy Policy for Atmos Weather</h1>
-        <p class="last-updated">Effective Date: November 3, 2025</p>
+        <p class="last-updated">Effective Date: January 7, 2026</p>
 
         <div class="highlight">
-            <strong>Important Notice:</strong> Atmos Weather is committed to protecting your privacy. We do not collect, store, or share any personal information. If you grant location permission, your location is only used temporarily to fetch weather data and is never stored or tracked.
+            <strong>Summary:</strong> Atmos Weather uses advertising, analytics, and subscription services to provide and improve the app. We collect limited data through these third-party services as described below. Your location is only used to fetch weather data and is never stored or tracked by us.
         </div>
 
         <h2>1. Overview</h2>
         <p>
-            <span class="app-name">Atmos Weather</span> ("we," "our," or "the App") is a weather application that provides current weather information and forecasts. This Privacy Policy describes how the App handles information when you use our services.
+            <span class="app-name">Atmos Weather</span> ("we," "our," or "the App") is a weather application that provides current weather information and forecasts. This Privacy Policy describes how the App handles information when you use our services, including our use of third-party services for advertising, analytics, and subscription management.
         </p>
 
-        <h2>2. Information Collection and Use</h2>
-        <p><strong>Location Information (Optional):</strong></p>
-        <p>
-            If you choose to enable location permission, Atmos Weather will access your device's GPS to determine your current location and provide weather information for your area. This location data is:
-        </p>
-        <ul>
-            <li>Only used to fetch weather data from WeatherAPI.com</li>
-            <li>Not stored on our servers (we don't have any servers)</li>
-            <li>Not logged, tracked, or saved anywhere</li>
-            <li>Not shared with any third parties except WeatherAPI.com (only to retrieve weather data)</li>
-            <li>Completely optional - you can use the app without granting location permission by manually searching for locations</li>
-        </ul>
+        <h2>2. Information We Collect</h2>
         
-        <p><strong>Information We Do NOT Collect:</strong></p>
-        <p>Atmos Weather does not collect, transmit, or store any of the following:</p>
+        <h3>2.1 Information You Provide</h3>
         <ul>
-            <li>Personal information (name, email, phone number, etc.)</li>
-            <li>User account information (no registration or login required)</li>
-            <li>Location history or location tracking</li>
-            <li>Search history (search queries are sent to Mapbox but not stored by us)</li>
-            <li>Device identifiers or advertising IDs</li>
-            <li>Usage statistics or analytics data</li>
-            <li>Crash reports or diagnostic data</li>
-            <li>Any other personally identifiable information</li>
+            <li><strong>Location Data (Optional):</strong> If you grant location permission, we access your device's GPS to provide weather for your current location. This data is sent only to WeatherAPI.com to retrieve weather information and is not stored by us.</li>
+            <li><strong>Search Queries:</strong> When you search for locations, your queries are sent to Mapbox for geocoding.</li>
+        </ul>
+
+        <h3>2.2 Information Collected Automatically</h3>
+        <p>Through our third-party service providers, the following information may be collected automatically:</p>
+        <ul>
+            <li><strong>Device Information:</strong> Device model, operating system version, unique device identifiers</li>
+            <li><strong>Advertising ID:</strong> Your device's advertising identifier for personalized ads</li>
+            <li><strong>Usage Data:</strong> App usage patterns, features used, session duration</li>
+            <li><strong>Crash Data:</strong> Crash logs, error reports, and app state at the time of errors</li>
+            <li><strong>Purchase Information:</strong> Subscription status and transaction IDs (managed by RevenueCat)</li>
+        </ul>
+
+        <h3>2.3 Information We Do NOT Collect</h3>
+        <ul>
+            <li>Personal information (name, email, phone number)</li>
+            <li>User account credentials (no registration required)</li>
+            <li>Location history or continuous tracking</li>
+            <li>Contacts, photos, or other device content</li>
         </ul>
 
         <h2>3. How the App Works</h2>
-        <p>
-            <span class="app-name">Atmos Weather</span> provides weather information in the following ways:
-        </p>
         <ul>
-            <li><strong>Current Location Weather:</strong> If you grant location permission, the app uses your device's GPS to determine your current location coordinates and displays weather data for that area. The location coordinates are only used to fetch weather information and are not stored, logged, or transmitted anywhere except to WeatherAPI.com for retrieving weather data.</li>
-            <li><strong>Manual Location Search:</strong> You can search for any city or location by name without enabling location permission. When you type a location name, your search query is sent to Mapbox Search Box API to provide location suggestions and retrieve coordinates (latitude/longitude). These coordinates are then used to fetch weather data from WeatherAPI.com.</li>
-            <li><strong>Weather Data:</strong> Weather information is retrieved from WeatherAPI.com. Only the location coordinates (latitude/longitude) are sent to their servers to fetch weather data. No personal information is transmitted.</li>
-            <li><strong>Local Storage:</strong> All your preferences, saved locations, and backup data are stored locally on your device only. This data never leaves your device.</li>
+            <li><strong>Current Location Weather:</strong> If you grant location permission, the app uses your device's GPS to fetch weather data from WeatherAPI.com. Location coordinates are transmitted only for this purpose.</li>
+            <li><strong>Manual Location Search:</strong> Search queries are sent to Mapbox Search Box API to retrieve location suggestions and coordinates.</li>
+            <li><strong>Local Storage:</strong> Your preferences, saved locations, and settings are stored locally on your device.</li>
         </ul>
 
         <h2>4. Third-Party Services</h2>
+        <p>Atmos Weather uses the following third-party services:</p>
+
+        <h3>4.1 Google AdMob (Advertising)</h3>
+        <p>We display advertisements through Google AdMob to support the free version of the app.</p>
+        <p><strong>Data collected by AdMob:</strong></p>
+        <ul>
+            <li>Advertising ID</li>
+            <li>Device information (model, OS version, screen size)</li>
+            <li>IP address (for geographic targeting)</li>
+            <li>Ad interaction data (views, clicks)</li>
+        </ul>
         <p>
-            Atmos Weather uses the following third-party services to provide functionality:
+            <strong>Opt-out:</strong> You can opt out of personalized advertising by going to your device's Settings > Privacy > Ads and enabling "Opt out of Ads Personalization" (Android) or "Limit Ad Tracking" (iOS).
         </p>
-        
-        <p><strong>4.1 WeatherAPI.com</strong></p>
-        <p>
-            We use WeatherAPI.com to provide weather information. When you search for a location or use your current location, the location name or coordinates (latitude/longitude) are transmitted to WeatherAPI.com to retrieve current weather data and forecasts. This transmission constitutes data sharing as defined by app store policies, even though we do not store this information.
-        </p>
-        <p>
-            WeatherAPI.com may collect technical information such as IP addresses and location coordinates for their service operation. Review their privacy policy:
-            <a href="https://www.weatherapi.com/privacy.aspx" target="_blank">WeatherAPI.com Privacy Policy</a>
-        </p>
-        
-        <p><strong>4.2 Mapbox Search Box API</strong></p>
-        <p>
-            We use Mapbox Search Box API to provide location search functionality. When you search for a city or location by name, your search query is transmitted to Mapbox to retrieve location suggestions and coordinates (latitude/longitude). Mapbox receives these search queries in real-time to provide autocomplete suggestions.
-        </p>
-        <p>
-            Mapbox may collect technical information such as IP addresses and search queries for their service operation. This information may be logged by Mapbox according to their policies. Review their privacy policy:
-            <a href="https://www.mapbox.com/legal/privacy" target="_blank">Mapbox Privacy Policy</a>
-        </p>
-        
-        <p>
-            <strong>Important:</strong> We do not have control over and are not responsible for the privacy practices of these third-party services. These services operate independently and have their own privacy policies and terms of service.
-        </p>
+        <p>Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
+
+        <h3>4.2 Firebase Crashlytics (Crash Reporting)</h3>
+        <p>We use Firebase Crashlytics to identify and fix app crashes and errors.</p>
+        <p><strong>Data collected:</strong></p>
+        <ul>
+            <li>Crash logs and stack traces</li>
+            <li>Device state at crash time</li>
+            <li>Installation UUID (anonymous identifier)</li>
+            <li>App version and configuration</li>
+        </ul>
+        <p>This data helps us improve app stability and is not used for advertising purposes.</p>
+        <p>Privacy Policy: <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a></p>
+
+        <h3>4.3 Firebase Analytics</h3>
+        <p>We use Firebase Analytics to understand how users interact with the app.</p>
+        <p><strong>Data collected:</strong></p>
+        <ul>
+            <li>App usage events (screens viewed, features used)</li>
+            <li>Session duration and frequency</li>
+            <li>Device and platform information</li>
+            <li>Geographic region (country/region level)</li>
+        </ul>
+        <p>This data is aggregated and anonymized to improve user experience.</p>
+        <p>Privacy Policy: <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a></p>
+
+        <h3>4.4 RevenueCat (Subscription Management)</h3>
+        <p>We use RevenueCat to manage premium subscriptions and in-app purchases.</p>
+        <p><strong>Data collected:</strong></p>
+        <ul>
+            <li>Anonymous device identifier</li>
+            <li>Subscription status and purchase history</li>
+            <li>Transaction IDs from app stores</li>
+        </ul>
+        <p>This data is used solely for subscription management and entitlement verification.</p>
+        <p>Privacy Policy: <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></p>
+
+        <h3>4.5 WeatherAPI.com (Weather Data)</h3>
+        <p>We use WeatherAPI.com to provide weather information.</p>
+        <p><strong>Data transmitted:</strong> Location coordinates (latitude/longitude) to retrieve weather data.</p>
+        <p>Privacy Policy: <a href="https://www.weatherapi.com/privacy.aspx" target="_blank">WeatherAPI.com Privacy Policy</a></p>
+
+        <h3>4.6 Mapbox (Location Search)</h3>
+        <p>We use Mapbox Search Box API for location search functionality.</p>
+        <p><strong>Data transmitted:</strong> Search queries for location suggestions.</p>
+        <p>Privacy Policy: <a href="https://www.mapbox.com/legal/privacy" target="_blank">Mapbox Privacy Policy</a></p>
 
         <h2>5. Data Storage</h2>
-        <p>
-            All data within Atmos Weather is stored locally on your device, including:
-        </p>
+        <p>Data stored locally on your device includes:</p>
         <ul>
-            <li>Saved locations and search history</li>
-            <li>App preferences and settings</li>
+            <li>Saved locations and preferences</li>
+            <li>App settings and theme choices</li>
             <li>Backup files (if created by you)</li>
+            <li>Unlocked theme purchases</li>
         </ul>
-        <p>
-            This data remains on your device and is never uploaded to any server or cloud service. You have full control over this data and can delete it at any time by clearing the app's data or uninstalling the app.
-        </p>
+        <p>This data remains on your device and is never uploaded to our servers. You can delete it by clearing app data or uninstalling the app.</p>
 
         <h2>6. Backup and Restore</h2>
-        <p>
-            Atmos Weather allows you to create backup files of your saved locations and preferences. These backups are:
-        </p>
+        <p>Backup files are stored locally on your device and are under your complete control. If you export backups to cloud storage services, those services' privacy policies apply.</p>
+
+        <h2>7. Advertising</h2>
+        <p>Atmos Weather displays advertisements through Google AdMob. Free users see native ads within the app. Premium subscribers (Atmos+) enjoy an ad-free experience.</p>
+        
+        <div class="info-box">
+            <strong>Your Choices:</strong>
+            <ul style="margin-bottom: 0;">
+                <li><strong>Personalized Ads:</strong> Opt out via device Settings > Privacy > Ads</li>
+                <li><strong>Remove Ads:</strong> Subscribe to Atmos+ for an ad-free experience</li>
+            </ul>
+        </div>
+
+        <h2>8. Analytics and Crash Reporting</h2>
+        <p>We use Firebase Analytics and Crashlytics to understand app usage and improve stability. This data is:</p>
         <ul>
-            <li>Stored locally on your device by default</li>
-            <li>Not transmitted to any external server by the app</li>
-            <li>Under your complete control</li>
-            <li>Can be deleted by you at any time</li>
+            <li>Anonymized and aggregated</li>
+            <li>Not used for advertising targeting</li>
+            <li>Not shared with third parties for their own purposes</li>
+            <li>Used solely to improve the app</li>
         </ul>
-        <p>
-            <strong>Important:</strong> Exported backup files may be saved to any location you choose on your device or uploaded to cloud storage services (such as Google Drive, Dropbox, etc.) if you choose to do so. You are responsible for securing and deleting these exported backup files. If you share or upload backup files to cloud services, those services' privacy policies will apply to that data.
-        </p>
 
-        <h2>7. No Advertisements</h2>
-        <p>
-            Atmos Weather does not display any advertisements and does not use any advertising networks or trackers. There are no third-party advertising SDKs integrated into the app.
-        </p>
-
-        <h2>8. No Analytics or Tracking</h2>
-        <p>
-            We do not use any analytics services, tracking tools, or crash reporting systems. The app does not collect any usage statistics or behavioral data.
-        </p>
-
-        <h2>9. Permissions</h2>
-        <p>
-            Atmos Weather may request the following permissions:
-        </p>
+        <h2>9. Subscriptions and In-App Purchases</h2>
+        <p>Atmos Weather offers optional premium subscriptions ("Atmos+") that provide:</p>
         <ul>
-            <li><strong>Location Permission (Optional):</strong> If you choose to grant location permission, the app will access your device's GPS to determine your current location and display weather for that area. You can deny this permission and still use the app by manually searching for locations. Location data is only used to fetch weather information and is not stored or tracked.</li>
-            <li><strong>Internet Access:</strong> Required to fetch weather data from WeatherAPI.com</li>
-            <li><strong>Storage Access:</strong> Required to save and restore backup files locally on your device</li>
+            <li>Ad-free experience</li>
+            <li>Unlimited saved locations</li>
+            <li>Premium themes and icon styles</li>
+            <li>Widget customization</li>
+            <li>Backup and restore features</li>
         </ul>
-        <p>
-            <strong>Important:</strong> Location permission is completely optional. If denied, you can still use all app features by searching for locations manually.
-        </p>
+        <p>Subscriptions are processed through Google Play and managed by RevenueCat. We do not store your payment information.</p>
 
-        <h2>10. Children's Privacy</h2>
-        <p>
-            Atmos Weather is not directed to children under the age of 13 (or the applicable digital consent age in your jurisdiction). We do not knowingly collect any information from anyone, including children. While the app does not collect, store, or transmit any personal data, we advise parents and guardians to monitor their children's use of the app.
-        </p>
-        <p>
-            If you are a parent or guardian and believe your child has used the app and you have concerns, please contact us at <a href="mailto:sumitkahar073@gmail.com">sumitkahar073@gmail.com</a>. Although we do not collect any data, we will be happy to address any questions or concerns you may have.
-        </p>
+        <h2>10. Permissions</h2>
+        <table>
+            <tr>
+                <th>Permission</th>
+                <th>Purpose</th>
+                <th>Required?</th>
+            </tr>
+            <tr>
+                <td>Location</td>
+                <td>Fetch weather for your current location</td>
+                <td>Optional</td>
+            </tr>
+            <tr>
+                <td>Internet</td>
+                <td>Fetch weather data and display ads</td>
+                <td>Required</td>
+            </tr>
+            <tr>
+                <td>Notifications</td>
+                <td>Weather alerts and widget updates</td>
+                <td>Optional</td>
+            </tr>
+        </table>
 
-        <h2>11. Data Security</h2>
-        <p>
-            Since Atmos Weather does not collect or transmit any personal information, there is no personal data at risk. All data stored by the app remains locally on your device and is protected by your device's security features.
-        </p>
+        <h2>11. Children's Privacy</h2>
+        <p>Atmos Weather is not directed to children under 13. We do not knowingly collect personal information from children. The app displays advertisements that are subject to Google's ad policies for general audiences.</p>
 
-        <h2>12. Your Rights and Control</h2>
-        <p>
-            You have complete control over any data stored by Atmos Weather:
-        </p>
+        <h2>12. Data Security</h2>
+        <p>We implement appropriate security measures to protect information transmitted through the app. However, no method of transmission over the Internet is 100% secure.</p>
+
+        <h2>13. Your Rights and Control</h2>
         <ul>
-            <li>All data is stored locally on your device</li>
-            <li>You can delete saved locations at any time within the app</li>
-            <li>You can clear all app data through your device settings</li>
-            <li>Uninstalling the app removes all data stored within the app</li>
+            <li><strong>Access:</strong> View your saved data within the app</li>
+            <li><strong>Delete:</strong> Clear app data or uninstall to remove local data</li>
+            <li><strong>Opt-out:</strong> Disable personalized ads in device settings</li>
+            <li><strong>Restore:</strong> Restore purchases through the app's settings</li>
         </ul>
-        <p>
-            <strong>Note:</strong> Uninstalling the app will delete all locally stored data within the app, but it will not automatically delete any backup files you have exported and saved to other locations on your device or cloud storage services. You are responsible for deleting those exported backup files separately if desired.
-        </p>
 
-        <h2>13. Changes to This Privacy Policy</h2>
-        <p>
-            We may update this Privacy Policy from time to time. Any changes will be reflected by updating the "Effective Date" at the top of this policy. We encourage you to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
-        </p>
+        <h2>14. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy periodically. Changes will be reflected by updating the "Effective Date" at the top. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
 
-        <h2>14. International Users</h2>
-        <p>
-            Atmos Weather can be used anywhere in the world. Since we do not collect any personal information, there are no international data transfer concerns. Weather data is fetched directly from WeatherAPI.com based on your search queries.
-        </p>
+        <h2>15. International Users</h2>
+        <p>Atmos Weather can be used worldwide. Data may be processed in countries where our third-party service providers operate. By using the app, you consent to such transfer and processing.</p>
 
-        <h2>15. Legal Compliance</h2>
-        <p>
-            Atmos Weather aims to follow applicable data protection laws and privacy regulations, including GDPR, CCPA, and other regional requirements. Because we do not collect or store personal information, most data protection obligations do not apply to our app. However, we remain committed to transparency and user privacy in our operations.
-        </p>
+        <h2>16. Legal Compliance</h2>
+        <p>This policy is designed to comply with applicable privacy laws including GDPR, CCPA, and other regional requirements. For EU/EEA users, our legal basis for processing is legitimate interest (app functionality) and consent (personalized advertising).</p>
 
-        <h2>16. Policy Version History</h2>
-        <p>
-            To ensure transparency, we maintain a record of significant updates to this Privacy Policy:
-        </p>
+        <h2>17. Policy Version History</h2>
         <ul>
+            <li><strong>Version 2.0 (January 7, 2026):</strong> Major update adding advertising, analytics, crash reporting, and subscription disclosures</li>
             <li><strong>Version 1.0 (November 3, 2025):</strong> Initial privacy policy published</li>
         </ul>
-        <p>
-            Future updates will be documented here with the date and a brief description of changes made.
-        </p>
 
         <div class="contact">
-            <h2>17. Contact Us</h2>
-            <p>If you have any questions, concerns, or suggestions regarding this Privacy Policy or Atmos Weather, please contact us:</p>
+            <h2>18. Contact Us</h2>
+            <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
             <p>
                 <strong>Email:</strong> <a href="mailto:sumitkahar073@gmail.com">sumitkahar073@gmail.com</a><br>
                 <strong>App Name:</strong> Atmos Weather<br>
                 <strong>Developer:</strong> Sumit Kahar
-            </p>
-            <p style="margin-top: 15px; font-size: 0.9em; color: #5f6368;">
-                We will respond to your inquiries as soon as possible.
             </p>
         </div>
 
@@ -282,7 +330,7 @@
         
         <p style="text-align: center; color: #5f6368; font-size: 0.9em;">
             This privacy policy is accurate and complete to the best of our knowledge.<br>
-            Last updated: November 3, 2025
+            Last updated: January 7, 2026
         </p>
     </div>
 </body>
