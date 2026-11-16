@@ -1,337 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Atmos Weather</title>
     <style>
+        :root {
+            --primary: #1a73e8;
+            --text: #202124;
+            --text-secondary: #5f6368;
+            --bg: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --border: #dadce0;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #8ab4f8;
+                --text: #e8eaed;
+                --text-secondary: #9aa0a6;
+                --bg: #202124;
+                --bg-secondary: #303134;
+                --border: #5f6368;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            padding: 20px;
+        }
+
+        .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            color: #333;
-            background-color: #f5f5f5;
+            padding: 40px 20px;
         }
-        .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+
         h1 {
-            color: #1a73e8;
-            font-size: 2em;
-            margin-bottom: 10px;
-            border-bottom: 3px solid #1a73e8;
-            padding-bottom: 15px;
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: var(--text);
         }
-        h2 {
-            color: #202124;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 1.4em;
-        }
-        h3 {
-            color: #3c4043;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-        ul {
-            margin: 15px 0;
-            padding-left: 25px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
+
         .last-updated {
-            color: #5f6368;
-            font-size: 0.95em;
-            margin-bottom: 30px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 32px;
         }
-        .contact {
-            background-color: #e8f0fe;
-            padding: 20px;
-            border-radius: 6px;
-            margin-top: 40px;
-            border-left: 4px solid #1a73e8;
+
+        h2 {
+            font-size: 1.25rem;
+            margin: 32px 0 16px;
+            color: var(--text);
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
         }
-        .highlight {
-            background-color: #fff3cd;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid #ffc107;
-            margin: 20px 0;
+
+        h3 {
+            font-size: 1.1rem;
+            margin: 20px 0 12px;
+            color: var(--text);
         }
-        .info-box {
-            background-color: #e8f5e9;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid #4caf50;
-            margin: 20px 0;
+
+        p {
+            margin-bottom: 16px;
+            color: var(--text);
         }
+
+        ul,
+        ol {
+            margin: 0 0 16px 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
         a {
-            color: #1a73e8;
+            color: var(--primary);
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
-        .app-name {
-            font-weight: 600;
-            color: #1a73e8;
+
+        .highlight-box {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--primary);
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
         }
+
+        .contact-box {
+            background: var(--bg-secondary);
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 24px;
+        }
+
+        .contact-box p {
+            margin-bottom: 8px;
+        }
+
+        .contact-box strong {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background: var(--bg-secondary);
+            text-decoration: none;
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            background: var(--bg-secondary);
+            font-weight: 600;
+        }
+
+        .badge-trader {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 6px;
+            background: #e8f0fe;
+            color: #1a73e8;
+            margin-bottom: 12px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .badge-trader {
+                background: #1e3a5f;
+                color: #8ab4f8;
+            }
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 15px 0;
+            margin: 16px 0;
         }
-        th, td {
-            border: 1px solid #e0e0e0;
-            padding: 10px;
+
+        th,
+        td {
             text-align: left;
+            padding: 12px;
+            border: 1px solid var(--border);
+            vertical-align: top;
         }
+
         th {
-            background-color: #f5f5f5;
+            background: var(--bg-secondary);
+            font-weight: 600;
         }
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-            body {
-                padding: 10px;
-            }
+
+        footer {
+            margin-top: 48px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <h1>Privacy Policy for Atmos Weather</h1>
-        <p class="last-updated">Effective Date: January 7, 2026</p>
+        <nav class="nav-links">
+            <a href="https://sumitkahar992.github.io/atmos_weather_termsofservice/">Terms of Service</a>
+            <a href="https://sumitkahar992.github.io/atmos_weather_privacy/" class="active">Privacy Policy</a>
+        </nav>
 
-        <div class="highlight">
-            <strong>Summary:</strong> Atmos Weather uses advertising, analytics, and subscription services to provide and improve the app. We collect limited data through these third-party services as described below. Your location is only used to fetch weather data and is never stored or tracked by us.
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last Updated: November 16, 2026 (Version 3.0)</p>
+
+        <div class="highlight-box">
+            <p><strong>Atmos Weather</strong> (<code>io.github.atmosweather</code>) respects your privacy. The App is
+                completely ad-free, requires no account registration, stores your saved locations and preferences locally
+                on your device, and transmits only the data strictly required for weather lookups, location search,
+                diagnostics/analytics, and optional subscriptions.</p>
         </div>
 
-        <h2>1. Overview</h2>
-        <p>
-            <span class="app-name">Atmos Weather</span> ("we," "our," or "the App") is a weather application that provides current weather information and forecasts. This Privacy Policy describes how the App handles information when you use our services, including our use of third-party services for advertising, analytics, and subscription management.
-        </p>
+        <h2>1. Information We Process</h2>
 
-        <h2>2. Information We Collect</h2>
-        
-        <h3>2.1 Information You Provide</h3>
+        <h3>1.1 Data Stored Locally on Your Device</h3>
+        <p>Atmos Weather does not require account registration and does not maintain developer-hosted cloud user
+            databases. Your saved locations, cached weather forecasts and air quality metrics (Room database), app
+            preferences, notification schedules, widget configurations, and unlocked theme settings (Android DataStore)
+            are stored locally on your device.</p>
+
+        <h3>1.2 Information You Provide or Authorize</h3>
         <ul>
-            <li><strong>Location Data (Optional):</strong> If you grant location permission, we access your device's GPS to provide weather for your current location. This data is sent only to WeatherAPI.com to retrieve weather information and is not stored by us.</li>
-            <li><strong>Search Queries:</strong> When you search for locations, your queries are sent to Mapbox for geocoding.</li>
+            <li><strong>Location Data (Optional):</strong> If you grant runtime location permission, the App accesses
+                your device's GPS/network location through Google Play Services (Fused Location Provider) to retrieve
+                weather for your current location. Coordinates (latitude and longitude) are transmitted over HTTPS to
+                <strong>WeatherAPI.com</strong> solely to fetch weather, air quality, and forecast data. We do not
+                maintain a server-side location history or continuously track you for profiling.</li>
+            <li><strong>Location Search Queries:</strong> When you search for a city or place, your search text and a
+                session identifier are sent over HTTPS to the <strong>Mapbox Search Box API</strong> to retrieve
+                autocomplete suggestions and geographic coordinates.</li>
+            <li><strong>Manual Backup Files (Optional Atmos+ Feature):</strong> If you create or restore a backup in
+                Settings, the App reads or writes a local JSON backup file only to the device folder or storage provider
+                you explicitly select via Android's Storage Access Framework. If you choose to export a backup file to a
+                third-party cloud drive (such as Google Drive), that third-party service's privacy policy applies.</li>
         </ul>
 
-        <h3>2.2 Information Collected Automatically</h3>
-        <p>Through our third-party service providers, the following information may be collected automatically:</p>
+        <h3>1.3 No Third-Party Advertising or Advertising ID</h3>
+        <p><strong>No Third-Party Ads:</strong> As of version 2.1.0, Atmos Weather displays <strong>no third-party
+                advertisements</strong> and does not bundle any advertising network SDK (such as Google AdMob). The App
+            explicitly excludes advertising-identifier libraries and removes <code>AD_ID</code>,
+            <code>ACCESS_ADSERVICES_AD_ID</code>, and <code>ACCESS_ADSERVICES_ATTRIBUTION</code> permissions from the
+            merged Android manifest.</p>
+
+        <h3>1.4 Information We Do Not Collect</h3>
         <ul>
-            <li><strong>Device Information:</strong> Device model, operating system version, unique device identifiers</li>
-            <li><strong>Advertising ID:</strong> Your device's advertising identifier for personalized ads</li>
-            <li><strong>Usage Data:</strong> App usage patterns, features used, session duration</li>
-            <li><strong>Crash Data:</strong> Crash logs, error reports, and app state at the time of errors</li>
-            <li><strong>Purchase Information:</strong> Subscription status and transaction IDs (managed by RevenueCat)</li>
+            <li>Account credentials, passwords, or developer-managed user profiles (no sign-in required)</li>
+            <li>Contacts, photos, camera, microphone, or personal files unrelated to a user-selected backup file</li>
+            <li>Payment card numbers or bank details (handled exclusively by Google Play)</li>
+            <li>Google Advertising ID (<code>AD_ID</code>) or behavioral ad-targeting profiles</li>
         </ul>
 
-        <h3>2.3 Information We Do NOT Collect</h3>
-        <ul>
-            <li>Personal information (name, email, phone number)</li>
-            <li>User account credentials (no registration required)</li>
-            <li>Location history or continuous tracking</li>
-            <li>Contacts, photos, or other device content</li>
-        </ul>
-
-        <h2>3. How the App Works</h2>
-        <ul>
-            <li><strong>Current Location Weather:</strong> If you grant location permission, the app uses your device's GPS to fetch weather data from WeatherAPI.com. Location coordinates are transmitted only for this purpose.</li>
-            <li><strong>Manual Location Search:</strong> Search queries are sent to Mapbox Search Box API to retrieve location suggestions and coordinates.</li>
-            <li><strong>Local Storage:</strong> Your preferences, saved locations, and settings are stored locally on your device.</li>
-        </ul>
-
-        <h2>4. Third-Party Services</h2>
-        <p>Atmos Weather uses the following third-party services:</p>
-
-        <h3>4.1 Google AdMob (Advertising)</h3>
-        <p>We display advertisements through Google AdMob to support the free version of the app.</p>
-        <p><strong>Data collected by AdMob:</strong></p>
-        <ul>
-            <li>Advertising ID</li>
-            <li>Device information (model, OS version, screen size)</li>
-            <li>IP address (for geographic targeting)</li>
-            <li>Ad interaction data (views, clicks)</li>
-        </ul>
-        <p>
-            <strong>Opt-out:</strong> You can opt out of personalized advertising by going to your device's Settings > Privacy > Ads and enabling "Opt out of Ads Personalization" (Android) or "Limit Ad Tracking" (iOS).
-        </p>
-        <p>Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></p>
-
-        <h3>4.2 Firebase Crashlytics (Crash Reporting)</h3>
-        <p>We use Firebase Crashlytics to identify and fix app crashes and errors.</p>
-        <p><strong>Data collected:</strong></p>
-        <ul>
-            <li>Crash logs and stack traces</li>
-            <li>Device state at crash time</li>
-            <li>Installation UUID (anonymous identifier)</li>
-            <li>App version and configuration</li>
-        </ul>
-        <p>This data helps us improve app stability and is not used for advertising purposes.</p>
-        <p>Privacy Policy: <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a></p>
-
-        <h3>4.3 Firebase Analytics</h3>
-        <p>We use Firebase Analytics to understand how users interact with the app.</p>
-        <p><strong>Data collected:</strong></p>
-        <ul>
-            <li>App usage events (screens viewed, features used)</li>
-            <li>Session duration and frequency</li>
-            <li>Device and platform information</li>
-            <li>Geographic region (country/region level)</li>
-        </ul>
-        <p>This data is aggregated and anonymized to improve user experience.</p>
-        <p>Privacy Policy: <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy</a></p>
-
-        <h3>4.4 RevenueCat (Subscription Management)</h3>
-        <p>We use RevenueCat to manage premium subscriptions and in-app purchases.</p>
-        <p><strong>Data collected:</strong></p>
-        <ul>
-            <li>Anonymous device identifier</li>
-            <li>Subscription status and purchase history</li>
-            <li>Transaction IDs from app stores</li>
-        </ul>
-        <p>This data is used solely for subscription management and entitlement verification.</p>
-        <p>Privacy Policy: <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a></p>
-
-        <h3>4.5 WeatherAPI.com (Weather Data)</h3>
-        <p>We use WeatherAPI.com to provide weather information.</p>
-        <p><strong>Data transmitted:</strong> Location coordinates (latitude/longitude) to retrieve weather data.</p>
-        <p>Privacy Policy: <a href="https://www.weatherapi.com/privacy.aspx" target="_blank">WeatherAPI.com Privacy Policy</a></p>
-
-        <h3>4.6 Mapbox (Location Search)</h3>
-        <p>We use Mapbox Search Box API for location search functionality.</p>
-        <p><strong>Data transmitted:</strong> Search queries for location suggestions.</p>
-        <p>Privacy Policy: <a href="https://www.mapbox.com/legal/privacy" target="_blank">Mapbox Privacy Policy</a></p>
-
-        <h2>5. Data Storage</h2>
-        <p>Data stored locally on your device includes:</p>
-        <ul>
-            <li>Saved locations and preferences</li>
-            <li>App settings and theme choices</li>
-            <li>Backup files (if created by you)</li>
-            <li>Unlocked theme purchases</li>
-        </ul>
-        <p>This data remains on your device and is never uploaded to our servers. You can delete it by clearing app data or uninstalling the app.</p>
-
-        <h2>6. Backup and Restore</h2>
-        <p>Backup files are stored locally on your device and are under your complete control. If you export backups to cloud storage services, those services' privacy policies apply.</p>
-
-        <h2>7. Advertising</h2>
-        <p>Atmos Weather displays advertisements through Google AdMob. Free users see native ads within the app. Premium subscribers (Atmos+) enjoy an ad-free experience.</p>
-        
-        <div class="info-box">
-            <strong>Your Choices:</strong>
-            <ul style="margin-bottom: 0;">
-                <li><strong>Personalized Ads:</strong> Opt out via device Settings > Privacy > Ads</li>
-                <li><strong>Remove Ads:</strong> Subscribe to Atmos+ for an ad-free experience</li>
-            </ul>
-        </div>
-
-        <h2>8. Analytics and Crash Reporting</h2>
-        <p>We use Firebase Analytics and Crashlytics to understand app usage and improve stability. This data is:</p>
-        <ul>
-            <li>Anonymized and aggregated</li>
-            <li>Not used for advertising targeting</li>
-            <li>Not shared with third parties for their own purposes</li>
-            <li>Used solely to improve the app</li>
-        </ul>
-
-        <h2>9. Subscriptions and In-App Purchases</h2>
-        <p>Atmos Weather offers optional premium subscriptions ("Atmos+") that provide:</p>
-        <ul>
-            <li>Ad-free experience</li>
-            <li>Unlimited saved locations</li>
-            <li>Premium themes and icon styles</li>
-            <li>Widget customization</li>
-            <li>Backup and restore features</li>
-        </ul>
-        <p>Subscriptions are processed through Google Play and managed by RevenueCat. We do not store your payment information.</p>
-
-        <h2>10. Permissions</h2>
+        <h3>1.5 Third-Party Services &amp; SDKs</h3>
+        <p>Depending on the features you use, Atmos Weather integrates the following third-party services:</p>
         <table>
             <tr>
-                <th>Permission</th>
+                <th>Service</th>
                 <th>Purpose</th>
-                <th>Required?</th>
+                <th>Data Processed</th>
             </tr>
             <tr>
-                <td>Location</td>
-                <td>Fetch weather for your current location</td>
-                <td>Optional</td>
+                <td><strong>WeatherAPI.com</strong></td>
+                <td>Current weather, air quality index, weather alerts, forecasts, and weather condition icons</td>
+                <td>Location coordinates (latitude/longitude) or location query and HTTPS request metadata</td>
             </tr>
             <tr>
-                <td>Internet</td>
-                <td>Fetch weather data and display ads</td>
-                <td>Required</td>
+                <td><strong>Mapbox Search Box API</strong></td>
+                <td>City/location autocomplete search and geocoding</td>
+                <td>User-entered search queries, language preference, session identifier, and HTTPS request metadata</td>
             </tr>
             <tr>
-                <td>Notifications</td>
-                <td>Weather alerts and widget updates</td>
-                <td>Optional</td>
+                <td><strong>Google Play Services (Fused Location Provider)</strong></td>
+                <td>On-device GPS/network location resolution (only when Location permission is granted)</td>
+                <td>Device location signals processed on-device to obtain coordinates</td>
+            </tr>
+            <tr>
+                <td><strong>Firebase Crashlytics &amp; Installations (Google)</strong></td>
+                <td>Crash reporting, stability diagnostics, and error investigation</td>
+                <td>Crash logs, stack traces, device model, OS version, app version/state, and a pseudonymous installation UUID</td>
+            </tr>
+            <tr>
+                <td><strong>Firebase Analytics (Google)</strong></td>
+                <td>Aggregated product analytics and app performance measurement</td>
+                <td>App-instance interaction events (screens viewed, feature usage, session duration), device/OS info, coarse region, and pseudonymous app-instance ID (ad-ID excluded)</td>
+            </tr>
+            <tr>
+                <td><strong>RevenueCat &amp; Google Play Billing</strong></td>
+                <td>Optional Atmos+ subscription processing and entitlement verification</td>
+                <td>Pseudonymous RevenueCat app user ID, subscription status, product/transaction identifiers, and purchase receipts</td>
             </tr>
         </table>
 
-        <h2>11. Children's Privacy</h2>
-        <p>Atmos Weather is not directed to children under 13. We do not knowingly collect personal information from children. The app displays advertisements that are subject to Google's ad policies for general audiences.</p>
-
-        <h2>12. Data Security</h2>
-        <p>We implement appropriate security measures to protect information transmitted through the app. However, no method of transmission over the Internet is 100% secure.</p>
-
-        <h2>13. Your Rights and Control</h2>
+        <h2>2. Permissions We Request</h2>
+        <p>Atmos Weather requests only the Android permissions required for its features:</p>
         <ul>
-            <li><strong>Access:</strong> View your saved data within the app</li>
-            <li><strong>Delete:</strong> Clear app data or uninstall to remove local data</li>
-            <li><strong>Opt-out:</strong> Disable personalized ads in device settings</li>
-            <li><strong>Restore:</strong> Restore purchases through the app's settings</li>
+            <li><strong>Approximate &amp; Precise Location (<code>ACCESS_COARSE_LOCATION</code>,
+                    <code>ACCESS_FINE_LOCATION</code>) &mdash; Optional:</strong> Resolves your current location to
+                provide local weather conditions and forecasts.</li>
+            <li><strong>Internet &amp; Network State (<code>INTERNET</code>,
+                    <code>ACCESS_NETWORK_STATE</code>) &mdash; Required:</strong> Checks connectivity and fetches
+                weather data, location search results, subscription verification, and diagnostic telemetry.</li>
+            <li><strong>Notifications (<code>POST_NOTIFICATIONS</code>) &mdash; Optional:</strong> Delivers weather
+                alerts and scheduled daily weather notifications.</li>
+            <li><strong>Alarms, Foreground Sync &amp; Boot Receiver (<code>SCHEDULE_EXACT_ALARM</code>,
+                    <code>USE_EXACT_ALARM</code>, <code>FOREGROUND_SERVICE</code>,
+                    <code>FOREGROUND_SERVICE_DATA_SYNC</code>, <code>RECEIVE_BOOT_COMPLETED</code>,
+                    <code>WAKE_LOCK</code>) &mdash; Feature-dependent:</strong> Keeps scheduled weather notifications,
+                background WorkManager refreshes, and home-screen widgets up to date, including after device restarts.</li>
+            <li><strong>Home-Screen Widgets (<code>UPDATE_APP_WIDGETS</code>):</strong> Configures and updates
+                installed home-screen weather widgets.</li>
+            <li><strong>Google Play Billing &amp; Install Referrer (<code>com.android.vending.BILLING</code>,
+                    <code>BIND_GET_INSTALL_REFERRER_SERVICE</code>):</strong> Processes optional Atmos+
+                subscriptions and Google Play install attribution.</li>
         </ul>
 
-        <h2>14. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy periodically. Changes will be reflected by updating the "Effective Date" at the top. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+        <h2>3. Diagnostics, Analytics &amp; System Backup</h2>
+        <p>We use <strong>Firebase Crashlytics</strong> and <strong>Firebase Analytics</strong> to monitor app
+            stability, diagnose crashes, and understand general feature usage. These services rely on
+            <strong>pseudonymous</strong> installation and app-instance identifiers rather than your name or email, and
+            are not used for third-party advertising.</p>
+        <p><strong>Android Auto Backup:</strong> The App enables standard Android backup configuration
+            (<code>allowBackup="true"</code>). Depending on your device and Google Account backup settings, Android may
+            back up local app data to your encrypted Google Drive backup.</p>
 
-        <h2>15. International Users</h2>
-        <p>Atmos Weather can be used worldwide. Data may be processed in countries where our third-party service providers operate. By using the app, you consent to such transfer and processing.</p>
+        <h2>4. Subscriptions &amp; In-App Purchases</h2>
+        <p>Atmos Weather offers optional auto-renewing subscriptions (<strong>Atmos+</strong> &mdash; Monthly, including a
+            7-day free trial for eligible new subscribers, and Yearly) that unlock premium capabilities such as
+            unlimited saved locations, home-screen weather widgets and customization, premium color palettes and weather
+            icon styles, and local backup/restore. Payments are processed directly by <strong>Google Play</strong> as
+            merchant of record, and entitlement state is synchronized via <strong>RevenueCat</strong>. We do not receive
+            or store your payment card information.</p>
 
-        <h2>16. Legal Compliance</h2>
-        <p>This policy is designed to comply with applicable privacy laws including GDPR, CCPA, and other regional requirements. For EU/EEA users, our legal basis for processing is legitimate interest (app functionality) and consent (personalized advertising).</p>
-
-        <h2>17. Policy Version History</h2>
+        <h2>5. Data Storage, Retention, and Deletion</h2>
+        <p>You can delete all locally stored locations, caches, and preferences at any time via Android
+            <em>Settings &gt; Apps &gt; Atmos Weather &gt; Clear Data</em> or by uninstalling the App.</p>
+        <p><strong>Retention Periods:</strong></p>
         <ul>
-            <li><strong>Version 2.0 (January 7, 2026):</strong> Major update adding advertising, analytics, crash reporting, and subscription disclosures</li>
-            <li><strong>Version 1.0 (November 3, 2025):</strong> Initial privacy policy published</li>
+            <li><strong>Location Coordinates &amp; Search Queries:</strong> Processed transiently to fulfill weather and
+                geocoding requests; not stored in developer-controlled databases.</li>
+            <li><strong>Local Weather Cache &amp; Preferences:</strong> Retained on your device until updated, cleared,
+                or uninstalled.</li>
+            <li><strong>Crashlytics &amp; Analytics Telemetry:</strong> Retained in accordance with Google/Firebase
+                default retention schedules (typically 90 days for Crashlytics crash data and 2&ndash;14 months for
+                Analytics event data).</li>
+            <li><strong>Subscription &amp; Purchase Records:</strong> Retained by RevenueCat and Google Play as
+                necessary to maintain active entitlements and satisfy statutory tax, accounting, and audit obligations.</li>
+        </ul>
+        <p><strong>Deletion &amp; Privacy Requests:</strong> Because Atmos Weather does not create or store user
+            accounts, there is no user account to delete. If you wish to request deletion or access regarding any
+            pseudonymous support or processor data, email
+            <a href="mailto:sumitkahar073@gmail.com">sumitkahar073@gmail.com</a>. Verified requests are processed
+            promptly and within 30 days (subject to statutory tax or financial recordkeeping obligations retained by
+            Google Play).</p>
+
+        <h2>6. Data Security</h2>
+        <p>Local data is protected by Android application sandboxing. All network communications with WeatherAPI.com,
+            Mapbox, Google/Firebase, Google Play Billing, and RevenueCat are encrypted in transit using HTTPS/TLS.
+            However, no method of electronic transmission or storage is 100% secure.</p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>Atmos Weather is not directed at children under 13 years of age (or the applicable digital age of consent in
+            your jurisdiction). We do not knowingly collect personal information from children. If you believe a child
+            has provided personal information through the App or by contacting us, please email
+            <a href="mailto:sumitkahar073@gmail.com">sumitkahar073@gmail.com</a> so we can promptly delete it.</p>
+
+        <h2>8. Third-Party Policies</h2>
+        <p>Integrated services operate under their own privacy policies:</p>
+        <ul>
+            <li><a href="https://www.weatherapi.com/privacy.aspx" target="_blank" rel="noopener">WeatherAPI.com Privacy Policy</a></li>
+            <li><a href="https://www.mapbox.com/legal/privacy" target="_blank" rel="noopener">Mapbox Privacy Policy</a></li>
+            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy (Google Play Services &amp; Billing)</a></li>
+            <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy &amp; Security (Crashlytics &amp; Analytics)</a></li>
+            <li><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat Privacy Policy</a></li>
         </ul>
 
-        <div class="contact">
-            <h2>18. Contact Us</h2>
-            <p>If you have questions or concerns about this Privacy Policy, please contact us:</p>
-            <p>
-                <strong>Email:</strong> <a href="mailto:sumitkahar073@gmail.com">sumitkahar073@gmail.com</a><br>
-                <strong>App Name:</strong> Atmos Weather<br>
-                <strong>Developer:</strong> Sumit Kahar
-            </p>
+        <h2>9. Your Privacy Rights</h2>
+        <p>Depending on your location (including the EEA, United Kingdom, and California), you may have rights to access,
+            correct, export, restrict, or delete your personal data, withdraw consent for optional runtime Android
+            permissions (Location or Notifications) in device settings at any time, and <strong>lodge a complaint with
+                your local data protection supervisory authority</strong>. We do not sell or share your personal
+            information for cross-context behavioral advertising.</p>
+
+        <div class="badge-trader">EU Digital Services Act (DSA) &amp; GDPR Compliance</div>
+        <h2>10. Legal Compliance, Data Controller &amp; Legal Bases</h2>
+        <p>This privacy policy aligns with the <strong>GDPR / UK GDPR</strong> (Regulation (EU) 2016/679), the
+            <strong>EU Digital Services Act (DSA)</strong> (Regulation (EU) 2022/2065), <strong>CCPA / CPRA</strong>,
+            and Google Play Developer Program Policies.</p>
+
+        <h3>10.1 Data Controller</h3>
+        <p>The Data Controller responsible for personal data processed in connection with Atmos Weather is
+            <strong>Sumit Kahar</strong>, acting as an individual commercial developer / <strong>Trader</strong>.</p>
+
+        <h3>10.2 Legal Bases for Processing (GDPR Article 6)</h3>
+        <ul>
+            <li><strong>Performance of a Contract (Art. 6(1)(b)):</strong> Fulfilling weather lookups and location search
+                requested by you, and verifying Atmos+ purchases and entitlements.</li>
+            <li><strong>Legitimate Interests (Art. 6(1)(f)):</strong> Maintaining app stability, diagnosing crashes using
+                pseudonymous identifiers, and measuring aggregated product performance without ad tracking.</li>
+            <li><strong>Compliance with Legal Obligations (Art. 6(1)(c)):</strong> Meeting consumer protection, EU DSA
+                traceability, and tax/accounting obligations.</li>
+            <li><strong>Consent (Art. 6(1)(a)):</strong> Optional runtime Android permissions (Location and
+                Notifications) granted and revocable by you at any time.</li>
+        </ul>
+
+        <h3>10.3 International Transfers</h3>
+        <p>Integrated service providers (such as Google / Firebase, RevenueCat, Mapbox, and WeatherAPI.com) may process
+            data in countries outside your country of residence, including the United States, using approved transfer
+            safeguards such as Standard Contractual Clauses (SCCs) or recognized adequacy frameworks.</p>
+
+        <h2>11. Changes &amp; Version History</h2>
+        <p>We may update this Privacy Policy periodically by posting the revised version here with an updated "Last
+            Updated" date.</p>
+        <ul>
+            <li><strong>Version 3.0 (November 16, 2026):</strong> Removed obsolete Google AdMob / Advertising ID
+                disclosures (reflecting the ad-free app since v2.1.0), added Trader / EU DSA legal notice details,
+                GDPR Article 6 legal bases, retention periods, international transfer safeguards, supervisory authority
+                rights, and complete Android manifest permissions.</li>
+            <li><strong>Version 2.0 (January 7, 2026):</strong> Added analytics, crash reporting, subscription, and
+                legacy advertising disclosures.</li>
+            <li><strong>Version 1.0 (November 3, 2025):</strong> Initial privacy policy published.</li>
+        </ul>
+
+        <h2>12. Contact Us &amp; Legal Notice (Data Controller)</h2>
+        <p>To ask questions, request data deletion, or exercise statutory privacy rights, contact the Data Controller:</p>
+
+        <div class="contact-box">
+            <p><strong>App Name:</strong> Atmos Weather</p>
+            <p><strong>Package Name:</strong> io.github.atmosweather</p>
+            <p><strong>Data Controller / Trader:</strong> Sumit Kahar (Individual Commercial Developer / Trader)</p>
+            <p><strong>Trader Status:</strong> Declared Trader under EU Digital Services Act (Regulation (EU) 2022/2065)</p>
+            <p><strong>Legal Address:</strong> 438, Kaana Paar, Ramnagar, Dhani Bazar, Pharenda, Maharajganj - 273161, India</p>
+            <p><strong>Telephone:</strong> <a href="tel:+919151382162">+91 9151382162</a></p>
+            <p><strong>Support Email:</strong> <a href="mailto:sumitkahar073@gmail.com">sumitkahar073@gmail.com</a></p>
+            <p><strong>Terms of Service:</strong> <a href="https://sumitkahar992.github.io/atmos_weather_termsofservice/">View Terms of Service</a></p>
         </div>
 
-        <hr style="margin: 40px 0; border: none; border-top: 1px solid #e0e0e0;">
-        
-        <p style="text-align: center; color: #5f6368; font-size: 0.9em;">
-            This privacy policy is accurate and complete to the best of our knowledge.<br>
-            Last updated: January 7, 2026
-        </p>
+        <footer>
+            <p>&copy; 2026 Atmos Weather &mdash; Sumit Kahar. All rights reserved.</p>
+        </footer>
     </div>
 </body>
+
 </html>
